@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>{message ? message : "Loading ..."}</p>
+        <p>{message ? "message = " + message : "Extra Loading ..."}</p>
       </header>
     </div>
   );
