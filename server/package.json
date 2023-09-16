@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"{src}/**/*.ts\" --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start:dev": "ts-node-dev -r tsconfig-paths/register src/server.ts",
@@ -16,6 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/express": "^4.17.17",
+    "@types/mongoose": "^5.11.97",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
@@ -30,6 +31,10 @@
     "prettier": "^2.3.2"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "inversify": "^6.0.1",
+    "mongoose": "^7.5.2",
+    "reflect-metadata": "^0.1.13"
   }
 }
