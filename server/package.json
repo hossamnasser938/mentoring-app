@@ -9,7 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start:dev": "ts-node-dev -r tsconfig-paths/register src/server.ts",
-    "start:prod": "ts-node -r tsconfig-paths/register build/server.js"
+    "start:prod": "ts-node -r tsconfig-paths/register build/server.js",
+    "create-resource": "bash scripts/create-resource.sh"
   },
   "keywords": [],
   "author": "",
