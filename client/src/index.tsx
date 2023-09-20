@@ -1,6 +1,10 @@
+import './index.css';
+import './react-styling/src/assets/styles/tailwind.css';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
