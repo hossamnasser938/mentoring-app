@@ -22,7 +22,7 @@ function App() {
   ]);
 
   return (
-    <>
+    <div>
       {/* <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -31,7 +31,7 @@ function App() {
     </div> */}
 
       <RouterProvider router={route}></RouterProvider>
-    </>
+    </div>
   );
 }
 
