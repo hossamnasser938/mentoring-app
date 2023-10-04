@@ -1,5 +1,7 @@
 import 'reflect-metadata';
 
+import dotenv from 'dotenv';
+dotenv.config();
 import { mentorRouter } from '@mentor/mentor.router';
 import { json } from 'body-parser';
 import express from 'express';
