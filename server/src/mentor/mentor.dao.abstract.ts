@@ -5,4 +5,6 @@ import { ICreateMentorDTO, IUpdateMentorDTO } from './mentor.types';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IMentorDAO
-  extends AGenericDAO<IMentor, ICreateMentorDTO, IUpdateMentorDTO> {}
+  extends AGenericDAO<IMentor, ICreateMentorDTO, IUpdateMentorDTO> {
+  getMentorByName(name: string): Promise<IMentor | null>;
+}
