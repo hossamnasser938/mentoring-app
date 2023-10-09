@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function Register() {
   return (
@@ -9,9 +9,7 @@ export default function Register() {
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
               <div className="rounded-t mb-0 px-6 py-6">
                 <div className="text-center mb-3">
-                  <h6 className="text-blueGray-500 text-sm font-bold">
-                    Sign up with
-                  </h6>
+                  <h6 className="text-blueGray-500 text-sm font-bold">Sign up with</h6>
                 </div>
                 <div className="btn-wrapper text-center">
                   <button
@@ -21,7 +19,7 @@ export default function Register() {
                     <img
                       alt="..."
                       className="w-5 mr-1"
-                      src={require("../../assets/img/github.svg").default}
+                      src={require('../../assets/img/github.svg').default}
                     />
                     Github
                   </button>
@@ -32,7 +30,7 @@ export default function Register() {
                     <img
                       alt="..."
                       className="w-5 mr-1"
-                      src={require("../../assets/img/google.svg").default}
+                      src={require('../../assets/img/google.svg').default}
                     />
                     Google
                   </button>
@@ -94,11 +92,11 @@ export default function Register() {
                         className="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
                       />
                       <span className="ml-2 text-sm font-semibold text-blueGray-600">
-                        I agree with the{" "}
+                        I agree with the{' '}
                         <a
                           href="#pablo"
                           className="text-lightBlue-500"
-                          onClick={(e) => e.preventDefault()}
+                          onClick={e => e.preventDefault()}
                         >
                           Privacy Policy
                         </a>

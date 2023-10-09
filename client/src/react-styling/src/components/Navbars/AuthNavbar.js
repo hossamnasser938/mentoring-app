@@ -1,10 +1,10 @@
 /*eslint-disable*/
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // components
 
-import PagesDropdown from "../../components/Dropdowns/PagesDropdown.js";
+import PagesDropdown from '../../components/Dropdowns/PagesDropdown.js';
 
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -29,8 +29,8 @@ export default function Navbar(props) {
           </div>
           <div
             className={
-              "lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none" +
-              (navbarOpen ? " block rounded shadow-lg" : " hidden")
+              'lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none' +
+              (navbarOpen ? ' block rounded shadow-lg' : ' hidden')
             }
             id="example-navbar-warning"
           >
@@ -38,9 +38,9 @@ export default function Navbar(props) {
               <li className="flex items-center">
                 <Link
                   className="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
- to='/'
- >
-                  <i className="lg:text-blueGray-200 text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" />{" "}
+                  to="/"
+                >
+                  <i className="lg:text-blueGray-200 text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" />{' '}
                   Home
                 </Link>
               </li>
