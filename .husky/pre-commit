@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Check if there are changes in the "client" directory
+if git diff --cached --name-only --diff-filter=ACMT | grep -q "^client/"; then
+  # Run client-specific commands
+  echo "Running client-specific pre-commit checks..."
+  cd client
+  yarn lint && yarn format
+  cd ..
+fi
+
+if git diff --cached --name-only --diff-filter=ACMT | grep -q "^server/"; then
+  echo "Running server-specific pre-commit checks..."
+  cd server
+  yarn lint && yarn format
+  cd ..
+fi

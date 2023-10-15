@@ -5,9 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:prod": "cd server; yarn start:prod"
+    "start:prod": "cd server; yarn start:prod",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^8.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run pre-commit"
+    }
+  }
+  
 }
