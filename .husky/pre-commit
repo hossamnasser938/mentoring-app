@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Check if there are changes in the "client" directory
+if git diff --cached --name-only --diff-filter=ACMT | grep -q "^client/"; then
+  # Run client-specific commands
+  echo "Running client-specific pre-commit checks..."
+  cd client
+  if yarn lint --quiet && yarn format; then
+    echo "Client-specific pre-commit checks passed."
+  else
+    echo "Client-specific pre-commit checks failed. Please fix the issues."
+    exit 1
+  fi
+  cd ..
+fi
+
+# Check if there are changes in the "server" directory
+if git diff --cached --name-only --diff-filter=ACMT | grep -q "^server/"; then
+  # Run server-specific commands
+  echo "Running server-specific pre-commit checks..."
+  cd server
+  if yarn lint --quiet && yarn format; then
+    echo "Server-specific pre-commit checks passed."
+  else
+    echo "Server-specific pre-commit checks failed. Please fix the issues."
+    exit 1
+  fi
+  cd ..
+fi
