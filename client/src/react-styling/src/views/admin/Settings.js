@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import CardProfile from "../../components/Cards/CardProfile.js";
+import CardProfile from '../../components/Cards/CardProfile.js';
 // components
-import CardSettings from "../../components/Cards/CardSettings.js";
+import CardSettings from '../../components/Cards/CardSettings.js';
 
 export default function Settings() {
   return (

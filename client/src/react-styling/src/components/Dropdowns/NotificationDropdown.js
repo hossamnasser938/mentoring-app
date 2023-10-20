@@ -1,5 +1,5 @@
-import { createPopper } from "@popperjs/core";
-import React from "react";
+import { createPopper } from '@popperjs/core';
+import React from 'react';
 
 const NotificationDropdown = () => {
   // dropdown props
@@ -7,9 +7,9 @@ const NotificationDropdown = () => {
   const btnDropdownRef = React.createRef();
   const popoverDropdownRef = React.createRef();
   const openDropdownPopover = () => {
-    console.log("hey");
+    console.log('hey');
     createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
-      placement: "bottom-start",
+      placement: 'bottom-start',
     });
     setDropdownPopoverShow(true);
   };
@@ -22,7 +22,7 @@ const NotificationDropdown = () => {
         className="text-blueGray-500 block py-1 px-3"
         href="#pablo"
         ref={btnDropdownRef}
-        onClick={(e) => {
+        onClick={e => {
           e.preventDefault();
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
@@ -32,34 +32,34 @@ const NotificationDropdown = () => {
       <div
         ref={popoverDropdownRef}
         className={
-          (dropdownPopoverShow ? "block " : "hidden ") +
-          "bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1 min-w-48"
+          (dropdownPopoverShow ? 'block ' : 'hidden ') +
+          'bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1 min-w-48'
         }
       >
         <a
           href="#pablo"
           className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            'text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700'
           }
-          onClick={(e) => e.preventDefault()}
+          onClick={e => e.preventDefault()}
         >
           Action
         </a>
         <a
           href="#pablo"
           className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            'text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700'
           }
-          onClick={(e) => e.preventDefault()}
+          onClick={e => e.preventDefault()}
         >
           Another action
         </a>
         <a
           href="#pablo"
           className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            'text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700'
           }
-          onClick={(e) => e.preventDefault()}
+          onClick={e => e.preventDefault()}
         >
           Something else here
         </a>
@@ -67,9 +67,9 @@ const NotificationDropdown = () => {
         <a
           href="#pablo"
           className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            'text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700'
           }
-          onClick={(e) => e.preventDefault()}
+          onClick={e => e.preventDefault()}
         >
           Seprated link
         </a>

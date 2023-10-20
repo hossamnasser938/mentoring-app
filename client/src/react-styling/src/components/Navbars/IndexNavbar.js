@@ -1,9 +1,9 @@
 /*eslint-disable*/
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 // components
 
-import IndexDropdown from "../../components/Dropdowns/IndexDropdown.js";
+import IndexDropdown from '../../components/Dropdowns/IndexDropdown.js';
 
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -28,8 +28,8 @@ export default function Navbar(props) {
           </div>
           <div
             className={
-              "lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none" +
-              (navbarOpen ? " block" : " hidden")
+              'lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none' +
+              (navbarOpen ? ' block' : ' hidden')
             }
             id="example-navbar-warning"
           >
@@ -39,8 +39,7 @@ export default function Navbar(props) {
                   className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   href="https://www.creative-tim.com/learning-lab/tailwind/react/overview/notus?ref=nr-index-navbar"
                 >
-                  <i className="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" />{" "}
-                  Docs
+                  <i className="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" /> Docs
                 </a>
               </li>
             </ul>
