@@ -33,7 +33,8 @@
   "scripts": {
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "format": "prettier --write src",
+    "format": "prettier src",
+    "format:fix": "prettier --write src",
     "start:dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
