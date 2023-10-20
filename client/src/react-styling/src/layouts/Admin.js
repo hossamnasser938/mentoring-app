@@ -38,14 +38,14 @@
 //   );
 // }
 
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
-import FooterAdmin from "../components/Footers/FooterAdmin.js";
-import HeaderStats from "../components/Headers/HeaderStats.js";
+import FooterAdmin from '../components/Footers/FooterAdmin.js';
+import HeaderStats from '../components/Headers/HeaderStats.js';
 // components
-import AdminNavbar from "../components/Navbars/AdminNavbar.js";
-import Sidebar from "../components/Sidebar/Sidebar.js";
+import AdminNavbar from '../components/Navbars/AdminNavbar.js';
+import Sidebar from '../components/Sidebar/Sidebar.js';
 
 export default function Admin() {
   return (
@@ -79,4 +79,3 @@ export default function Admin() {
     </>
   );
 }
-

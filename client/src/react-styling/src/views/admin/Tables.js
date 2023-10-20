@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // components
-import CardTable from "../../components/Cards/CardTable.js";
+import CardTable from '../../components/Cards/CardTable.js';
 
 export default function Tables() {
   return (

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import UserDropdown from "../../components/Dropdowns/UserDropdown.js";
+import UserDropdown from '../../components/Dropdowns/UserDropdown.js';
 
 export default function Navbar() {
   return (
@@ -12,7 +12,7 @@ export default function Navbar() {
           <a
             className="text-white text-sm uppercase hidden lg:inline-block font-semibold"
             href="#pablo"
-            onClick={(e) => e.preventDefault()}
+            onClick={e => e.preventDefault()}
           >
             Dashboard
           </a>

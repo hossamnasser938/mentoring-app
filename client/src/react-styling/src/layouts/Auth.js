@@ -28,7 +28,7 @@
 //             <Route path="/auth/login" exact component={Login} />
 //             <Route path="/auth/register" exact component={Register} />
 //             <Redirect from="/auth" to="/auth/login" />
-//           </Switch> 
+//           </Switch>
 //           <FooterSmall absolute />
 //         </section>
 //       </main>
@@ -36,16 +36,14 @@
 //   );
 // }
 
+import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
-
-import FooterSmall from "../components/Footers/FooterSmall.js";
+import FooterSmall from '../components/Footers/FooterSmall.js';
 // components
-import Navbar from "../components/Navbars/AuthNavbar.js";
+import Navbar from '../components/Navbars/AuthNavbar.js';
 
 export default function Auth() {
-
   return (
     <>
       <Navbar transparent />
@@ -54,8 +52,7 @@ export default function Auth() {
           <div
             className="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-full"
             style={{
-              backgroundImage:
-                "url(" + require("../assets/img/register_bg_2.png").default + ")",
+              backgroundImage: 'url(' + require('../assets/img/register_bg_2.png').default + ')',
             }}
           ></div>
           <nav>
@@ -75,4 +72,3 @@ export default function Auth() {
     </>
   );
 }
-
