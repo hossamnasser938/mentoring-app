@@ -20,3 +20,29 @@ iocContainer
   .toConstantValue(mentorModel);
 
 export { MentorDAO, MentorServie };
+
+/* user deps */
+
+import { UserModel, userModel } from '@core/data-layer/mongo-models/user.model';
+import { UserDAO } from '@user/user.dao';
+import { IUserDAO } from '@user/user.dao.abstract';
+import { UserService } from '@user/user.service';
+
+iocContainer.bind<IUserDAO>(IOC_TYPES.IUserDAO).to(UserDAO);
+iocContainer.bind<UserService>(IOC_TYPES.UserService).to(UserService);
+iocContainer.bind<UserModel>(IOC_TYPES.UserModel).toConstantValue(userModel);
+
+/* utilities deps */
+import { BcryptPassword } from '@core/utili/passwordHashing/bcryptPassword';
+import { IPasswordHasher } from '@core/utili/passwordHashing/hashPassword.abstract';
+import { TPayload } from '@core/utili/token/token.payload.interface';
+import { TokenService } from '@core/utili/token/token.service';
+import { ITokenService } from '@core/utili/token/token.service.interface';
+
+iocContainer
+  .bind<IPasswordHasher>(IOC_TYPES.IPasswordHasher)
+  .to(BcryptPassword);
+
+iocContainer
+  .bind<ITokenService<TPayload>>(IOC_TYPES.ITokenService)
+  .to(TokenService);
