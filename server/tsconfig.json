@@ -33,7 +33,9 @@
       "@core": ["src/core"],
       "@core/*": ["src/core/*"],
       "@mentor": ["src/mentor"],
-      "@mentor/*": ["src/mentor/*"]
+      "@mentor/*": ["src/mentor/*"],
+      "@user":["src/user"],
+      "@user/*":["src/user/*"]
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
