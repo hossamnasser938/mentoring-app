@@ -1,15 +1,29 @@
 import { iocContainer, MentorServie } from '@core/ioc-container';
 import { IOC_TYPES } from '@core/ioc-container/types';
+import { AuthMiddleware } from '@core/middleware/auth/auth';
 import { Request, Response, Router } from 'express';
+
+import { endPoints } from './mentor.endPoints';
 
 const mentorRouter = Router();
 
 const mentorService = iocContainer.get<MentorServie>(IOC_TYPES.MentorServie);
-
-mentorRouter.get('/', async (req: Request, res: Response) => {
-  const mentors = await mentorService.getAllMentors();
-  return res.json({ data: mentors });
-});
+const authMiddleware = iocContainer.get<AuthMiddleware>(
+  IOC_TYPES.AuthMiddleware,
+);
+mentorRouter.get(
+  '/',
+  authMiddleware.authantication,
+  async (req: Request, res: Response) => {
+    try {
+      await authMiddleware.authorize(endPoints.get);
+      const mentors = await mentorService.getAllMentors();
+      return res.json({ data: mentors });
+    } catch (err) {
+      res.json({ message: 'User is not authorized' });
+    }
+  },
+);
 
 mentorRouter.get('/:id', async (req: Request, res: Response) => {
   const { id } = req.params;

@@ -49,6 +49,7 @@ export class UserService {
       {
         email,
         role: user.role || 'User',
+        id: user._id,
       },
       process.env.LOGIN_SECRET_KEY || 'loginSecreteKey',
       60 * 60 * 60,
