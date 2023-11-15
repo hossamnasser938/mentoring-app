@@ -33,6 +33,7 @@ iocContainer.bind<UserService>(IOC_TYPES.UserService).to(UserService);
 iocContainer.bind<UserModel>(IOC_TYPES.UserModel).toConstantValue(userModel);
 
 /* utilities deps */
+import { AuthMiddleware } from '@core/middleware/auth/auth';
 import { BcryptPassword } from '@core/utili/passwordHashing/bcryptPassword';
 import { IPasswordHasher } from '@core/utili/passwordHashing/hashPassword.abstract';
 import { TPayload } from '@core/utili/token/token.payload.interface';
@@ -46,3 +47,7 @@ iocContainer
 iocContainer
   .bind<ITokenService<TPayload>>(IOC_TYPES.ITokenService)
   .to(TokenService);
+
+/* middleware deps */
+
+iocContainer.bind<AuthMiddleware>(IOC_TYPES.AuthMiddleware).to(AuthMiddleware);
