@@ -1,5 +1,4 @@
 import { IUser, UserRole } from '@core/entities/user.entity';
-import mongoose from 'mongoose';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface ICreateUserDTO extends IUser {}
@@ -7,10 +6,10 @@ export interface ICreateUserDTO extends IUser {}
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IUpdateUserDTO extends Partial<IUser> {}
 
-export interface LoginPayload extends Partial<IUser> {
+export interface AuthPayloadDTO extends Partial<IUser> {
   email: string;
   role: UserRole;
-  id: mongoose.Types.ObjectId;
+  id: string;
 }
 export interface ILoginUserDTO extends Partial<IUser> {
   email: string;

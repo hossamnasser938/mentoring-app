@@ -6,7 +6,6 @@ import {
 import { IUser } from '@core/entities/user.entity';
 import { IOC_TYPES } from '@core/ioc-container/types';
 import { inject, injectable } from 'inversify';
-import { HydratedDocument } from 'mongoose';
 
 import { IUserDAO } from './user.dao.abstract';
 import { ICreateUserDTO, IUpdateUserDTO } from './user.types';
@@ -22,7 +21,7 @@ export class UserDAO
     super(userModel);
   }
 
-  getUserByEmail(email: string): Promise<HydratedDocument<IUser> | null> {
-    return this.userModel.findOne({ email }).exec();
+  async getUserByEmail(email: string): Promise<IUser | null> {
+    return await this.userModel.findOne({ email }).exec();
   }
 }

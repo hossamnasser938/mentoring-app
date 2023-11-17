@@ -12,7 +12,7 @@ userRouter.post('/signup', async (req: Request, res: Response) => {
   const { username, email, password } = req.body;
 
   const user = await userService.signup({ username, email, password });
-  res.json({ message: 'Regestraion is done', data: user });
+  res.json({ message: 'Registration is done', data: user });
 });
 
 userRouter.post('/login', async (req: Request, res: Response) => {
