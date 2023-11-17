@@ -7,19 +7,20 @@ import { ITokenService } from './token.service.interface';
 export class TokenService<T extends string | object | Buffer>
   implements ITokenService<T>
 {
-  generateToken(
-    payload: T,
-    secretKey: string,
-    expiresIn: number = 60 * 60,
-  ): string {
-    return jwt.sign(payload, secretKey, { expiresIn });
+  generateToken(payload: T, secretKey: string, expiresIn: number): string {
+    const DEFAULT_TOKEN_EXPIRATION_SECONDS = expiresIn || 60 * 60 * 60;
+    return jwt.sign(payload, secretKey, {
+      expiresIn: DEFAULT_TOKEN_EXPIRATION_SECONDS,
+    });
   }
 
-  verifyToken(secretKey: string, token: string): T | null {
+  verifyToken(token: string, secretKey: string): any | null {
     try {
-      const decoded = jwt.verify(token, secretKey);
-      return decoded as T;
+      return jwt.verify(token, secretKey);
+      // return decoded as T;
     } catch (err) {
+      console.log(err);
+
       return null;
     }
   }

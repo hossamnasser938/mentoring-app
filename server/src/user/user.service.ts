@@ -4,7 +4,7 @@ import { ITokenService } from '@core/utili/token/token.service.interface';
 import { inject, injectable } from 'inversify';
 
 import { IUserDAO } from './user.dao.abstract';
-import { ICreateUserDTO, LoginPayload } from './user.types';
+import { AuthPayloadDTO, ICreateUserDTO } from './user.types';
 
 @injectable()
 export class UserService {
@@ -13,7 +13,7 @@ export class UserService {
     @inject(IOC_TYPES.IPasswordHasher)
     private readonly PasswordHasher: IPasswordHasher,
     @inject(IOC_TYPES.ITokenService)
-    private readonly tokenService: ITokenService<LoginPayload>,
+    private readonly tokenService: ITokenService<AuthPayloadDTO>,
   ) {}
 
   async signup(createUserDTO: ICreateUserDTO) {
@@ -36,7 +36,7 @@ export class UserService {
   async login(email: string, password: string) {
     const user = await this.userDAO.getUserByEmail(email);
     if (!user) {
-      throw new Error('User in not rejesterd');
+      throw new Error('User in not registered');
     }
     const comparePassword = this.PasswordHasher.comparePassword(
       password,
@@ -52,7 +52,6 @@ export class UserService {
         id: user._id,
       },
       process.env.LOGIN_SECRET_KEY || 'loginSecreteKey',
-      60 * 60 * 60,
     );
   }
 }

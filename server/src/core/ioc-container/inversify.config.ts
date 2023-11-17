@@ -4,6 +4,22 @@ import { IOC_TYPES } from './types';
 
 export const iocContainer = new Container();
 
+/* utilities deps */
+import { BcryptPassword } from '@core/utili/passwordHashing/bcryptPassword';
+import { IPasswordHasher } from '@core/utili/passwordHashing/hashPassword.abstract';
+// import { TPayload } from '@core/utili/token/token.payload.interface';
+import { TokenService } from '@core/utili/token/token.service';
+import { ITokenService } from '@core/utili/token/token.service.interface';
+import { AuthPayloadDTO } from '@user/user.types';
+
+iocContainer
+  .bind<IPasswordHasher>(IOC_TYPES.IPasswordHasher)
+  .to(BcryptPassword);
+
+iocContainer
+  .bind<ITokenService<AuthPayloadDTO>>(IOC_TYPES.ITokenService)
+  .to(TokenService);
+
 /* mentor deps */
 import {
   MentorModel,
@@ -32,22 +48,7 @@ iocContainer.bind<IUserDAO>(IOC_TYPES.IUserDAO).to(UserDAO);
 iocContainer.bind<UserService>(IOC_TYPES.UserService).to(UserService);
 iocContainer.bind<UserModel>(IOC_TYPES.UserModel).toConstantValue(userModel);
 
-/* utilities deps */
-import { AuthMiddleware } from '@core/middleware/auth/auth';
-import { BcryptPassword } from '@core/utili/passwordHashing/bcryptPassword';
-import { IPasswordHasher } from '@core/utili/passwordHashing/hashPassword.abstract';
-import { TPayload } from '@core/utili/token/token.payload.interface';
-import { TokenService } from '@core/utili/token/token.service';
-import { ITokenService } from '@core/utili/token/token.service.interface';
-
-iocContainer
-  .bind<IPasswordHasher>(IOC_TYPES.IPasswordHasher)
-  .to(BcryptPassword);
-
-iocContainer
-  .bind<ITokenService<TPayload>>(IOC_TYPES.ITokenService)
-  .to(TokenService);
-
 /* middleware deps */
+import { AuthMiddleware } from '@core/middleware/auth/auth';
 
 iocContainer.bind<AuthMiddleware>(IOC_TYPES.AuthMiddleware).to(AuthMiddleware);
