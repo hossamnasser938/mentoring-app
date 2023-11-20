@@ -1,19 +1,24 @@
 import { IOC_TYPES } from '@core/ioc-container/types';
+// import { TokenService } from '@core/utili/token/token.service';
 import { ITokenService } from '@core/utili/token/token.service.interface';
 import { IUserDAO } from '@user/user.dao.abstract';
 import { AuthPayloadDTO } from '@user/user.types';
 import { NextFunction, Request, Response } from 'express';
 import { inject, injectable } from 'inversify';
+
+import { IAuthMiddleware } from './auth.interface';
 @injectable()
-export class AuthMiddleware {
+export class AuthMiddleware implements IAuthMiddleware {
   constructor(
     @inject(IOC_TYPES.ITokenService)
     private readonly tokenService: ITokenService<AuthPayloadDTO>,
     @inject(IOC_TYPES.IUserDAO)
     private readonly userDAO: IUserDAO,
-  ) {}
+  ) {
+    this.authentication = this.authentication.bind(this);
+  }
 
-  async authantication(req: Request, res: Response, next: NextFunction) {
+  async authentication(req: Request, res: Response, next: NextFunction) {
     try {
       const { authorization } = req.headers;
 
@@ -33,7 +38,7 @@ export class AuthMiddleware {
       }
       const user = await this.userDAO.getOne(decoded.id);
       if (!user) {
-        throw new Error('user is not rejesterd');
+        throw new Error('user is not registered');
       }
 
       req.userDecodedData = decoded;
@@ -46,6 +51,7 @@ export class AuthMiddleware {
   authorize(accessRoles: string[]) {
     return (req: Request, res: Response, next: NextFunction) => {
       const userRole = req.userDecodedData?.role || '';
+
       if (!accessRoles.includes(userRole)) {
         throw new Error('user is not authorized');
       }

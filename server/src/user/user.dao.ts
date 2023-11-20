@@ -24,4 +24,12 @@ export class UserDAO
   async getUserByEmail(email: string): Promise<IUser | null> {
     return await this.userModel.findOne({ email }).exec();
   }
+  async getUserByName(username: string): Promise<IUser | null> {
+    const mentor = await this.userModel.findOne({ username }).exec();
+    return mentor;
+  }
+  async updateUserName(id: string, username: string): Promise<boolean> {
+    const result = await this.userModel.updateOne({ _id: id }, { username });
+    return result.matchedCount === 1;
+  }
 }

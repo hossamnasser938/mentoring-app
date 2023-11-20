@@ -5,3 +5,5 @@ export interface ICreateMentorDTO extends IMentor {}
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IUpdateMentorDTO extends Partial<ICreateMentorDTO> {}
+
+// export interface ICreateMentorToken extends Partial<IMentor>;

@@ -11,7 +11,7 @@ export interface AuthPayloadDTO extends Partial<IUser> {
   role: UserRole;
   id: string;
 }
-export interface ILoginUserDTO extends Partial<IUser> {
+export interface ILoginDTO extends Partial<IUser> {
   email: string;
   password: string;
 }

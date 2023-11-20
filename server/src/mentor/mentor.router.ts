@@ -1,13 +1,13 @@
 import { iocContainer, MentorServie } from '@core/ioc-container';
 import { IOC_TYPES } from '@core/ioc-container/types';
-import { AuthMiddleware } from '@core/middleware/auth/auth';
+import { IAuthMiddleware } from '@core/middleware/auth/auth.interface';
 import { Request, Response, Router } from 'express';
 
 const mentorRouter = Router();
 
 const mentorService = iocContainer.get<MentorServie>(IOC_TYPES.MentorServie);
-const authMiddleware = iocContainer.get<AuthMiddleware>(
-  IOC_TYPES.AuthMiddleware,
+const authMiddleware = iocContainer.get<IAuthMiddleware>(
+  IOC_TYPES.IAuthMiddleware,
 );
 mentorRouter.get(
   '/',
@@ -30,14 +30,25 @@ mentorRouter.get(
 
 mentorRouter.post(
   '/',
-  authMiddleware.authantication,
+  authMiddleware.authentication,
   authMiddleware.authorize(['Admin']),
   async (req: Request, res: Response) => {
-    const { name, title, description } = req.body;
+    const { username, title, description, youtubeLink, cv, profilePicture } =
+      req.body;
+
+    if (!req.userDecodedData?.id) {
+      return res.json({ error: 'User is not Authorized' });
+    }
+
     const mentor = await mentorService.createOneMentor({
-      name,
+      username,
       title,
       description,
+      youtubeLink,
+      cv,
+      profilePicture,
+      createdAdmin: req.userDecodedData?.id,
+      isCreatedByAdmin: false,
     });
     res.json({ data: mentor });
   },
@@ -45,23 +56,28 @@ mentorRouter.post(
 
 mentorRouter.put(
   '/:id',
-  authMiddleware.authantication,
+  authMiddleware.authentication,
   authMiddleware.authorize(['Mentor']),
   async (req: Request, res: Response) => {
     const { id } = req.params;
-    const { name, title, description } = req.body;
-    const updated = await mentorService.updateOneMentor(id, {
-      name,
-      title,
-      description,
-    });
+    const fieldsToUpdate = req.body;
+
+    const authoriaedMentor = req.userDecodedData?.id;
+    if (!authoriaedMentor) {
+      return res.json({ error: 'User is not Authorized' });
+    }
+    const updated = await mentorService.updateOneMentor(
+      id,
+      fieldsToUpdate,
+      authoriaedMentor,
+    );
     res.json({ success: updated });
   },
 );
 
 mentorRouter.delete(
   '/:id',
-  authMiddleware.authantication,
+  authMiddleware.authentication,
   authMiddleware.authorize(['Admin']),
   async (req: Request, res: Response) => {
     const { id } = req.params;

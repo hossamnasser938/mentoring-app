@@ -9,8 +9,9 @@ export const IOC_TYPES = {
   //Utilities
   IPasswordHasher: Symbol.for('IPasswordHasher'),
   ITokenService: Symbol.for('ITokenService'),
+  ITokenMentor: Symbol.for('ITokenMentor'),
 
   //middleware
 
-  AuthMiddleware: Symbol.for('AuthMiddleware'),
+  IAuthMiddleware: Symbol.for('IAuthMiddleware'),
 };

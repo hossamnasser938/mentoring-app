@@ -6,7 +6,6 @@ import {
 import { IMentor } from '@core/entities/mentor.entity';
 import { IOC_TYPES } from '@core/ioc-container/types';
 import { inject, injectable } from 'inversify';
-import { HydratedDocument } from 'mongoose';
 
 import { IMentorDAO } from './mentor.dao.abstract';
 import { ICreateMentorDTO, IUpdateMentorDTO } from './mentor.types';
@@ -27,10 +26,20 @@ export class MentorDAO
     super(mentorModel);
   }
 
-  async getMentorByName(
-    name: string,
-  ): Promise<HydratedDocument<IMentor> | null> {
-    const mentor = await this.mentorModel.findOne({ name }).exec();
+  async getMentorByName(username: string): Promise<IMentor | null> {
+    const mentor = await this.mentorModel.findOne({ username }).exec();
+    return mentor;
+  }
+
+  async findByNameAndUpdate(
+    username: string,
+    update: Record<string, any>,
+  ): Promise<IMentor | null> {
+    const mentor = await this.mentorModel.findOneAndUpdate(
+      { username },
+      update,
+      { new: true },
+    );
     return mentor;
   }
 }
