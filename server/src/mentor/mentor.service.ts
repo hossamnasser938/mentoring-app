@@ -107,7 +107,15 @@ export class MentorServie {
     }
   }
 
-  deleteOneMentor(id: string) {
+  async deleteOneMentor(id: string) {
+    const mentor = await this.mentorDAO.getOne(id);
+
+    if (!mentor || !mentor?.userId) {
+      throw new Error(`Mentor is not exist`);
+    }
+
+    await this.userDAO.deleteOne(mentor.userId);
+
     return this.mentorDAO.deleteOne(id);
   }
 }
