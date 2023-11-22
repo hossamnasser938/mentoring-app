@@ -6,6 +6,10 @@ export const IOC_TYPES = {
   UserModel: Symbol.for('UserModel'),
   IUserDAO: Symbol.for('IUserDAO'),
   UserService: Symbol.for('UserService'),
+  // projectIdeas
+  ProjectIdeasModel: Symbol.for('ProjectIdeasModel'),
+  ProjectIdeasServie: Symbol.for('ProjectIdeasServie'),
+  IProjectIdeasDAO: Symbol.for('IProjectIdeasDAO'),
   //Utilities
   IPasswordHasher: Symbol.for('IPasswordHasher'),
   ITokenService: Symbol.for('ITokenService'),
