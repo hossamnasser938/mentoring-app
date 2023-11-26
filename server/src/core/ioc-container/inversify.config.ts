@@ -59,3 +59,24 @@ import { IAuthMiddleware } from './../middleware/auth/auth.interface';
 iocContainer
   .bind<IAuthMiddleware>(IOC_TYPES.IAuthMiddleware)
   .to(AuthMiddleware);
+
+/* projectIdeas deps */
+import {
+  ProjectIdeasModel,
+  projectIdeasModel,
+} from '@core/data-layer/mongo-models/projectIdeas.model';
+import { ProjectIdeasDAO } from '@projectIdeas/projectIdeas.dao';
+import { IProjectIdeasDAO } from '@projectIdeas/projectIdeas.dao.abstract';
+import { ProjectIdeasServie } from '@projectIdeas/projectIdeas.service';
+
+iocContainer
+  .bind<IProjectIdeasDAO>(IOC_TYPES.IProjectIdeasDAO)
+  .to(ProjectIdeasDAO);
+iocContainer
+  .bind<ProjectIdeasServie>(IOC_TYPES.ProjectIdeasServie)
+  .to(ProjectIdeasServie);
+iocContainer
+  .bind<ProjectIdeasModel>(IOC_TYPES.ProjectIdeasModel)
+  .toConstantValue(projectIdeasModel);
+
+export { ProjectIdeasDAO, ProjectIdeasServie };
