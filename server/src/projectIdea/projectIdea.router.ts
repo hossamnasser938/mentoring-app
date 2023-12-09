@@ -1,39 +1,29 @@
-import { iocContainer, ProjectIdeasServie } from '@core/ioc-container';
+import { iocContainer, ProjectIdeaServie } from '@core/ioc-container';
 import { IOC_TYPES } from '@core/ioc-container/types';
 import { IAuthMiddleware } from '@core/middleware/auth/auth.interface';
 import { Request, Response, Router } from 'express';
 
-const projectIdeasRouter = Router();
+const projectIdeaRouter = Router();
 
-const projectIdeasService = iocContainer.get<ProjectIdeasServie>(
-  IOC_TYPES.ProjectIdeasServie,
+const projectIdeaService = iocContainer.get<ProjectIdeaServie>(
+  IOC_TYPES.ProjectIdeaServie,
 );
 const authMiddleware = iocContainer.get<IAuthMiddleware>(
   IOC_TYPES.IAuthMiddleware,
 );
 
-projectIdeasRouter.get(
-  '/',
-  authMiddleware.authentication,
-  authMiddleware.authorize(['Admin']),
-  async (req: Request, res: Response) => {
-    const projectIdeass = await projectIdeasService.getAllProjectIdeass();
-    return res.json({ data: projectIdeass });
-  },
-);
+projectIdeaRouter.get('/', async (req: Request, res: Response) => {
+  const projectIdeas = await projectIdeaService.getAllProjectIdeas();
+  return res.json({ data: projectIdeas });
+});
 
-projectIdeasRouter.get(
-  '/:id',
-  authMiddleware.authentication,
-  authMiddleware.authorize(['Admin']),
-  async (req: Request, res: Response) => {
-    const { id } = req.params;
-    const projectIdeas = await projectIdeasService.getOneProjectIdeas(id);
-    res.json({ data: projectIdeas });
-  },
-);
+projectIdeaRouter.get('/:id', async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const projectIdea = await projectIdeaService.getOneProjectIdeas(id);
+  res.json({ data: projectIdea });
+});
 
-projectIdeasRouter.post(
+projectIdeaRouter.post(
   '/',
   authMiddleware.authentication,
   authMiddleware.authorize(['Mentor']),
@@ -44,17 +34,17 @@ projectIdeasRouter.post(
       throw new Error('Not authorized user');
     }
 
-    const projectIdeas = await projectIdeasService.createOneProjectIdeas({
+    const projectIdea = await projectIdeaService.createOneProjectIdea({
       name,
       description,
       youtubeLink,
       createdMentor,
     });
-    res.json({ data: projectIdeas });
+    res.json({ data: projectIdea });
   },
 );
 
-projectIdeasRouter.put(
+projectIdeaRouter.put(
   '/:id',
   authMiddleware.authentication,
   authMiddleware.authorize(['Mentor']),
@@ -64,7 +54,7 @@ projectIdeasRouter.put(
     if (!createdMentor) {
       throw new Error('Not authorized user');
     }
-    const updated = await projectIdeasService.updateOneProjectIdeas(
+    const updated = await projectIdeaService.updateOneProjectIdea(
       id,
       req.body,
       createdMentor,
@@ -73,7 +63,7 @@ projectIdeasRouter.put(
   },
 );
 
-projectIdeasRouter.delete(
+projectIdeaRouter.delete(
   '/:id',
   authMiddleware.authentication,
   authMiddleware.authorize(['Mentor']),
@@ -83,7 +73,7 @@ projectIdeasRouter.delete(
     if (!createdMentor) {
       throw new Error('Not authorized user');
     }
-    const deleted = await projectIdeasService.deleteOneProjectIdeas(
+    const deleted = await projectIdeaService.deleteOneProjectIdea(
       id,
       createdMentor,
     );
@@ -91,4 +81,4 @@ projectIdeasRouter.delete(
   },
 );
 
-export { projectIdeasRouter };
+export { projectIdeaRouter };

@@ -62,21 +62,21 @@ iocContainer
 
 /* projectIdeas deps */
 import {
-  ProjectIdeasModel,
-  projectIdeasModel,
-} from '@core/data-layer/mongo-models/projectIdeas.model';
-import { ProjectIdeasDAO } from '@projectIdeas/projectIdeas.dao';
-import { IProjectIdeasDAO } from '@projectIdeas/projectIdeas.dao.abstract';
-import { ProjectIdeasServie } from '@projectIdeas/projectIdeas.service';
+  ProjectIdeaModel,
+  projectIdeaModel,
+} from '@core/data-layer/mongo-models/projectIdea.model';
+import { ProjectIdeaDAO } from '@projectIdea/projectIdea.dao';
+import { IProjectIdeaDAO } from '@projectIdea/projectIdea.dao.abstract';
+import { ProjectIdeaServie } from '@projectIdea/projectIdea.service';
 
 iocContainer
-  .bind<IProjectIdeasDAO>(IOC_TYPES.IProjectIdeasDAO)
-  .to(ProjectIdeasDAO);
+  .bind<IProjectIdeaDAO>(IOC_TYPES.IProjectIdeaDAO)
+  .to(ProjectIdeaDAO);
 iocContainer
-  .bind<ProjectIdeasServie>(IOC_TYPES.ProjectIdeasServie)
-  .to(ProjectIdeasServie);
+  .bind<ProjectIdeaServie>(IOC_TYPES.ProjectIdeaServie)
+  .to(ProjectIdeaServie);
 iocContainer
-  .bind<ProjectIdeasModel>(IOC_TYPES.ProjectIdeasModel)
-  .toConstantValue(projectIdeasModel);
+  .bind<ProjectIdeaModel>(IOC_TYPES.ProjectIdeaModel)
+  .toConstantValue(projectIdeaModel);
 
-export { ProjectIdeasDAO, ProjectIdeasServie };
+export { ProjectIdeaDAO, ProjectIdeaServie };
