@@ -1,24 +1,14 @@
 import './App.css';
 
-import { Provider } from 'react-redux';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 
 import OneProjectIdea from './component/projectIdea/OneProjectIdea';
 import Home from './pages/Home/Home';
-import store from './state/setupStore';
-import Profile from './views/MentorProfile';
-import ProjectIdeasPage from './views/ProjectIdeasPage';
 
 function App() {
-
-
-
   const route = createHashRouter([
     { path: '/', element: <Home /> },
-    { path: 'home', element: <Home /> },
-    { path: 'profile/:id', element: <Profile /> },
-    { path: 'projectideas', element: <ProjectIdeasPage /> },
-    { path: 'projectideas/:idea', element: <OneProjectIdea /> },
+    { path: 'landing', element: <Home /> },
   ]);
 
   return (
