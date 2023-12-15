@@ -6,6 +6,9 @@ import Footer from '../components/Footers/Footer.js';
 import Navbar from '../components/Navbars/AuthNavbar.js';
 
 export default function Landing() {
+
+
+
   return (
     <>
       <Navbar transparent />
@@ -254,10 +257,16 @@ export default function Landing() {
           </div>
         </section>
 
+
+        {/* /////////////////////////////////////////////////// */}
+        {/* Mentors section  */}
+
         <section className="pt-20 pb-48">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center text-center mb-24">
               <div className="w-full lg:w-6/12 px-4">
+
+
                 <h2 className="text-4xl font-semibold">Here are our heroes</h2>
                 <p className="text-lg leading-relaxed m-4 text-blueGray-500">
                   According to the National Oceanic and Atmospheric Administration, Ted, Scambos,
@@ -409,6 +418,11 @@ export default function Landing() {
             </div>
           </div>
         </section>
+
+
+        {/* Mentors section  */}
+
+        {/* /////////////////////////////////////////////////// */}
 
         <section className="pb-20 relative block bg-blueGray-800">
           {/* <div
