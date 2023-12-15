@@ -61,6 +61,7 @@ iocContainer
   .to(AuthMiddleware);
 
 /* projectIdeas deps */
+
 import {
   ProjectIdeaModel,
   projectIdeaModel,

@@ -19,7 +19,7 @@ projectIdeaRouter.get('/', async (req: Request, res: Response) => {
 
 projectIdeaRouter.get('/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
-  const projectIdea = await projectIdeaService.getOneProjectIdeas(id);
+  const projectIdea = await projectIdeaService.getOneProjectIdea(id);
   res.json({ data: projectIdea });
 });
 

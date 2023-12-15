@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import dotenv from 'dotenv';
 dotenv.config();
 import { mentorRouter } from '@mentor/mentor.router';
-import { projectIdeasRouter } from '@projectIdea/projectIdea.router';
+import { projectIdeaRouter } from '@projectIdea/projectIdea.router';
 import { userRouter } from '@user/user.router';
 import { json } from 'body-parser';
 import express from 'express';
@@ -16,7 +16,7 @@ app.use(json());
 
 app.use('/mentors', mentorRouter);
 app.use('/users', userRouter);
-app.use('/projectIdeas', projectIdeasRouter);
+app.use('/projectIdeas', projectIdeaRouter);
 
 const MONGODB_URL =
   process.env.MONGODB_URL || 'mongodb://localhost:27017/mentoring';
