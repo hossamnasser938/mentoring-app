@@ -24,7 +24,7 @@ mentorRouter.get(
   async (req: Request, res: Response) => {
     const { id } = req.params;
     const mentor = await mentorService.getOneMentor(id);
-    res.json({  mentor });
+    res.json({ mentor });
   },
 );
 
