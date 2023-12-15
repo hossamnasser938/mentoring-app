@@ -19,7 +19,7 @@ app.use('/users', userRouter);
 app.use('/projectIdeas', projectIdeaRouter);
 
 const MONGODB_URL =
-  process.env.MONGODB_URL || 'mongodb://localhost:27017/mentoring';
+  process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/mentoring';
 const PORT = process.env.PORT || 3001;
 
 mongoose.connect(MONGODB_URL, {}).then(() => {
