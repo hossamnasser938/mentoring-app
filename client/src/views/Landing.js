@@ -45,7 +45,6 @@ export default function Landing() {
                         </div>
                     </div>
 
-
                 </div>
                 {/* 1st section end */}
 
