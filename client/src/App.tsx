@@ -1,28 +1,22 @@
 import './App.css';
 
-import { configureStore } from '@reduxjs/toolkit';
-import { setupListeners } from '@reduxjs/toolkit/query';
 import { Provider } from 'react-redux';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
-import { apiSlice } from './state/apiSlice';
+import store from './state/setupStore';
 import Profile from './views/Profile';
+import ProjectIdeasPage from './views/ProjectIdeasPage';
 
 function App() {
 
-  const store = configureStore({
-    reducer: { [apiSlice.reducerPath]: apiSlice.reducer },
-    middleware: (getDefault) => getDefault().concat(apiSlice.middleware)
-  })
-
-  setupListeners(store.dispatch)
 
 
   const route = createHashRouter([
     { path: '/', element: <Home /> },
     { path: 'home', element: <Home /> },
     { path: 'profile/:id', element: <Profile /> },
+    { path: 'projectideas', element: <ProjectIdeasPage/> },
   ]);
 
   return (

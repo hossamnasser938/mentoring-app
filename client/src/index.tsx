@@ -1,5 +1,5 @@
 import './index.css';
-import './react-styling/src/assets/styles/tailwind.css';
+import './assets/styles/tailwind.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import React from 'react';
