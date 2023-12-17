@@ -20,8 +20,11 @@ export class ProjectIdeaServie {
 
   async getOneProjectIdea(id: string) {
     const idea = await this.projectIdeaDAO.getOne(id);
+     if (!idea) {
+      throw new Error('Project idea not exist');
+    }
 
-    return this.projectIdeaDAO.getOne(id);
+    return idea;
   }
 
   async createOneProjectIdea(createTodoDTO: ICreateProjectIdeaDTO) {
