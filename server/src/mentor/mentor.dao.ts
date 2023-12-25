@@ -42,4 +42,8 @@ export class MentorDAO
     );
     return mentor;
   }
+
+  async findOneMentorByUserId(userId: string): Promise<IMentor | null> {
+    return await this.mentorModel.findOne({ userId });
+  }
 }

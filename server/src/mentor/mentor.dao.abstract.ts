@@ -11,4 +11,6 @@ export interface IMentorDAO
     username: string,
     update: Record<string, any>,
   ): Promise<IMentor | null>;
+
+  findOneMentorByUserId(userId: string): Promise<IMentor | null>;
 }

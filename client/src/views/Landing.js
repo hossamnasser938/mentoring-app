@@ -5,18 +5,16 @@ import Footer from '../component/Footers/Footer.js';
 import Mentors from '../component/mentors/Mentors.js';
 import Navbar from '../component/Navbars/AuthNavbar.js';
 import ProjectIdeas from '../component/projectIdea/ProjectIdeas.js';
-import { useGetAllMentorsQuery } from '../state/apiSlice.ts';
+// import { useGetAllMentorsQuery } from '../state/apiSlice.ts';
 // components
 
 export default function Landing() {
-    const { data } = useGetAllMentorsQuery()
-    console.log("🚀 ~ file: Landing.js:12 ~ Landing ~ data:", data)
+    
 
 
     return (
         <>
             <Navbar transparent />
-
             <main>
                 {/* fisrt section  */}
 
@@ -39,6 +37,8 @@ export default function Landing() {
                                     <p className="mt-4 text-lg text-blueGray-200">
                                         This is a simple example of a Landing Page you can build using Notus React. It
                                         features multiple CSS components based on the Tailwind CSS design system.
+
+                                        
                                     </p>
                                 </div>
                             </div>
@@ -267,7 +267,7 @@ export default function Landing() {
                 {/* Mentors section  */}
 
 
-                <ProjectIdeas />
+                <ProjectIdeas  />
 
 
 

@@ -21,7 +21,7 @@ export default function Mentors() {
                 </p>
             </div>
         </div>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap ">
             {data && data.mentors && Array.isArray(data.mentors) && (
                 data.mentors.map(mentor => (
                     <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4" key={mentor._id}>
@@ -30,7 +30,7 @@ export default function Mentors() {
                             <Link to={`profile/${mentor._id}`}>
                                 <img
                                     alt="..."
-                                    // src={require('../assets/img/team-1-800x800.jpg').default}
+                                    src={mentor.profilePicture}
                                     className="shadow-lg rounded-full mx-auto max-w-120-px"
                                 />
                                 <div className="pt-6 text-center">

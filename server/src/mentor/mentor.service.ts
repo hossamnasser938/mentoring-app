@@ -18,8 +18,11 @@ export class MentorServie {
     return this.mentorDAO.getAll();
   }
 
-  getOneMentor(id: string) {
-    return this.mentorDAO.getOne(id);
+  async getOneMentor(id: string) {
+    return await this.mentorDAO.getOne(id);
+  }
+  async getOneMentorByUserId(userId: string) {
+    return await this.mentorDAO.findOneMentorByUserId(userId);
   }
 
   async createOneMentor(createTodoDTO: ICreateMentorDTO) {
