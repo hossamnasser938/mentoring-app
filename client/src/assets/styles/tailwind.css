@@ -2173,6 +2173,11 @@ select {
   position: fixed;
   top: 0;
 }
+.nav-color{
+  background-color: #71717a6c;
+  
+
+}
 
 .absolute {
   position: absolute;

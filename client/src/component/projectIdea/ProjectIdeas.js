@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useGetProjectIdeasQuery } from '../../state/apiSlice';
 import ProjectIdeaCard from './projectIdeaCard';
 
-export default function ProjectIdeas(isHome = false) {
+export default function ProjectIdeas( ) {
   const { data } = useGetProjectIdeasQuery();
 
   return (
@@ -21,15 +21,14 @@ export default function ProjectIdeas(isHome = false) {
           {data &&
             data.data &&
             Array.isArray(data.data) &&
-            data.data.map(idea => <ProjectIdeaCard key={idea._id} idea={idea} />).slice(0, 7)}
-          {isHome ? (
+            data.data.map(idea => <ProjectIdeaCard  idea={idea} />).slice(0, 7)}
+       
+        </div>
+     
             <Link to={'/projectideas'} className="flex justify-end mt-4 lg-blue">
               see more
             </Link>
-          ) : (
-            <Link to={'/projectideas'} className="flex justify-end mt-4 lg-blue">
-            </Link>)}
-        </div>
+       
       </div>
     </section>
   );

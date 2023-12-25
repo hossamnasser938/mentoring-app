@@ -27,6 +27,15 @@ mentorRouter.get(
     res.json({ mentor });
   },
 );
+mentorRouter.get(
+  '/userid/:userId',
+
+  async (req: Request, res: Response) => {
+    const { userId } = req.params;
+    const mentor = await mentorService.getOneMentorByUserId(userId);
+    res.json({ mentor });
+  },
+);
 
 mentorRouter.post(
   '/',
