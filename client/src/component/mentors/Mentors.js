@@ -8,7 +8,7 @@ export default function Mentors() {
 
   return (
  
-    <section className="pt-20 pb-48">
+    <section className="pt-20 pb-32">
     <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-center text-center mb-24">
             <div className="w-full lg:w-6/12 px-4">
@@ -21,10 +21,11 @@ export default function Mentors() {
                 </p>
             </div>
         </div>
+        
         <div className="flex flex-wrap ">
             {data && data.mentors && Array.isArray(data.mentors) && (
                 data.mentors.map(mentor => (
-                    <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4" key={mentor._id}>
+                    <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4 py-4" key={mentor._id}>
 
                         <div className="px-6" >
                             <Link to={`profile/${mentor._id}`}>
