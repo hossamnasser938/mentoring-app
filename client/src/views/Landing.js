@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Footer from '../component/Footers/Footer.js';
+import HomeProjectSection from '../component/homeprojectIdea/HomeProjectSection.js';
 import Mentors from '../component/mentors/Mentors.js';
 import Navbar from '../component/Navbars/AuthNavbar.js';
-import ProjectIdeas from '../component/projectIdea/ProjectIdeas.js';
 // import { useGetAllMentorsQuery } from '../state/apiSlice.ts';
 // components
 
 export default function Landing() {
-    
+
 
 
     return (
@@ -38,34 +38,14 @@ export default function Landing() {
                                         This is a simple example of a Landing Page you can build using Notus React. It
                                         features multiple CSS components based on the Tailwind CSS design system.
 
-                                        
+
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* related to the bluegray style at the section end */}
 
-                    {/* <div
-            className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
-            style={{ transform: "translateZ(0)" }}
-          >
-            <svg
-              className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon
-                className="text-blueGray-200 fill-current"
-                points="2560 0 2560 100 0 100"
-              ></polygon>
-            </svg>
-          </div> */}
                 </div>
                 {/* 1st section end */}
 
@@ -267,32 +247,15 @@ export default function Landing() {
                 {/* Mentors section  */}
 
 
-                <ProjectIdeas  />
 
+                {/* projectIdeas section  */}
 
-
+                <HomeProjectSection />
+                {/* projectIdeas section  */}
 
 
                 <section className="pb-20 relative block bg-blueGray-800">
-                    {/* <div
-            className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
-            style={{ transform: "translateZ(0)" }}
-          >
-            <svg
-              className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon
-                className="text-blueGray-800 fill-current"
-                points="2560 0 2560 100 0 100"
-              ></polygon>
-            </svg>
-          </div> */}
+
 
                     <div className="container mx-auto px-4 lg:pt-24 lg:pb-64">
                         <div className="flex flex-wrap text-center justify-center">
