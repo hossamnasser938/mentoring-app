@@ -81,3 +81,20 @@ iocContainer
   .toConstantValue(projectIdeaModel);
 
 export { ProjectIdeaDAO, ProjectIdeaServie };
+
+/* helpMe deps */
+import {
+  HelpMeModel,
+  helpMeModel,
+} from '@core/data-layer/mongo-models/helpMe.model';
+import { HelpMeDAO } from '@helpMe/helpMe.dao';
+import { IHelpMeDAO } from '@helpMe/helpMe.dao.abstract';
+import { HelpMeServie } from '@helpMe/helpMe.service';
+
+iocContainer.bind<IHelpMeDAO>(IOC_TYPES.IHelpMeDAO).to(HelpMeDAO);
+iocContainer.bind<HelpMeServie>(IOC_TYPES.HelpMeServie).to(HelpMeServie);
+iocContainer
+  .bind<HelpMeModel>(IOC_TYPES.HelpMeModel)
+  .toConstantValue(helpMeModel);
+
+export { HelpMeDAO, HelpMeServie };

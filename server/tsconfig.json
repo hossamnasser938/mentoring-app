@@ -37,7 +37,9 @@
       "@user": ["src/user"],
       "@user/*": ["src/user/*"],
       "@projectIdea": ["src/projectIdea"],
-      "@projectIdea/*": ["src/projectIdea/*"]
+      "@projectIdea/*": ["src/projectIdea/*"],
+      "@helpMe": ["src/helpMe"],
+      "@helpMe/*": ["src/helpMe/*"]
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     "typeRoots": [
