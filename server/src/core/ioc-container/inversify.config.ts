@@ -81,3 +81,22 @@ iocContainer
   .toConstantValue(projectIdeaModel);
 
 export { ProjectIdeaDAO, ProjectIdeaServie };
+
+/* contactUs deps */
+import { ContactUsDAO } from '@contactUs/contactUs.dao';
+import { IContactUsDAO } from '@contactUs/contactUs.dao.abstract';
+import { ContactUsServie } from '@contactUs/contactUs.service';
+import {
+  ContactUsModel,
+  contactUsModel,
+} from '@core/data-layer/mongo-models/contactUs.model';
+
+iocContainer.bind<IContactUsDAO>(IOC_TYPES.IContactUsDAO).to(ContactUsDAO);
+iocContainer
+  .bind<ContactUsServie>(IOC_TYPES.ContactUsServie)
+  .to(ContactUsServie);
+iocContainer
+  .bind<ContactUsModel>(IOC_TYPES.ContactUsModel)
+  .toConstantValue(contactUsModel);
+
+export { ContactUsDAO, ContactUsServie };

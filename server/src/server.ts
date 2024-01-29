@@ -2,6 +2,7 @@ import 'reflect-metadata';
 
 import dotenv from 'dotenv';
 dotenv.config();
+import { contactUsRouter } from '@contactUs/contactUs.router';
 import { mentorRouter } from '@mentor/mentor.router';
 import { projectIdeaRouter } from '@projectIdea/projectIdea.router';
 import { userRouter } from '@user/user.router';
@@ -17,6 +18,7 @@ app.use(json());
 app.use('/mentors', mentorRouter);
 app.use('/users', userRouter);
 app.use('/projectIdeas', projectIdeaRouter);
+app.use('/contactUs', contactUsRouter);
 
 const MONGODB_URL =
   process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/mentoring';
