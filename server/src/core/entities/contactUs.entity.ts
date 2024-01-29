@@ -5,7 +5,7 @@ export interface IContactUs extends BaseEntity {
   name: string;
   email?: string;
   phoneNumber: string;
-
+  responded?: boolean;
   field?: string;
   message: string;
   timeToContact?: ITimeToContact;

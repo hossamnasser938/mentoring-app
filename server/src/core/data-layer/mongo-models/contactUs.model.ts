@@ -13,6 +13,7 @@ const contactUsSchema = new Schema(
     phoneNumber: { type: String, required: true, unique: true },
     message: { type: String, required: true },
     field: { type: String },
+    responded: { type: Boolean, default: false },
     timeToContact: {
       hour: Number,
       minute: Number,
