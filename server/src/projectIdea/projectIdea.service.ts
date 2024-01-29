@@ -20,7 +20,7 @@ export class ProjectIdeaServie {
 
   async getOneProjectIdea(id: string) {
     const idea = await this.projectIdeaDAO.getOne(id);
-     if (!idea) {
+    if (!idea) {
       throw new Error('Project idea not exist');
     }
 
