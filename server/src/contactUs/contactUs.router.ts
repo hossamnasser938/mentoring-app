@@ -19,10 +19,11 @@ contactUsRouter.get(
   authMiddleware.authorize(['Mentor', 'Admin']),
   async (req: Request, res: Response) => {
     try {
-      const query: string | undefined = req.query.search as string;
-      if (query) {
-        const oneContactUS =
-          await contactUsService.getOneContactUsByEmailOrPhoneNumber(query);
+      const email: string | undefined = req.query.search as string;
+      if (email) {
+        const oneContactUS = await contactUsService.getOneContactUsByEmail(
+          email,
+        );
         return res.json({ data: oneContactUS });
       }
 
@@ -46,32 +47,14 @@ contactUsRouter.get(
 );
 
 contactUsRouter.post('/', async (req: Request, res: Response) => {
-  const { name, email, phoneNumber, message, timeToContact, field } = req.body;
+  const { name, email, message } = req.body;
 
-  if (timeToContact) {
-    const [hour, minute] = timeToContact.split(':').map(Number);
-    const contactUs = await contactUsService.createOneContactUs({
-      name,
-      email,
-      phoneNumber,
-      message,
-      field,
-      timeToContact: {
-        hour,
-        minute,
-      },
-    });
-    res.json({ data: contactUs });
-  } else {
-    const contactUs = await contactUsService.createOneContactUs({
-      name,
-      email,
-      phoneNumber,
-      message,
-      field,
-    });
-    res.json({ data: contactUs });
-  }
+  const contactUs = await contactUsService.createOneContactUs({
+    name,
+    email,
+    message,
+  });
+  res.json({ data: contactUs });
 });
 
 contactUsRouter.put('/:id', async (req: Request, res: Response) => {

@@ -18,8 +18,8 @@ export class ContactUsServie {
   async getOneContactUs(id: string) {
     return this.contactUsDAO.getOne(id);
   }
-  async getOneContactUsByEmailOrPhoneNumber(query: string) {
-    return await this.contactUsDAO.getContactUsByEmailOrPhoneNumber(query);
+  async getOneContactUsByEmail(email: string) {
+    return await this.contactUsDAO.getContactUsByEmail(email);
   }
 
   async createOneContactUs(createTodoDTO: ICreateContactUsDTO) {

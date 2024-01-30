@@ -6,5 +6,5 @@ import { ICreateContactUsDTO, IUpdateContactUsDTO } from './contactUs.types';
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IContactUsDAO
   extends AGenericDAO<IContactUs, ICreateContactUsDTO, IUpdateContactUsDTO> {
-  getContactUsByEmailOrPhoneNumber(query: string): Promise<IContactUs | null>;
+  getContactUsByEmail(email: string): Promise<IContactUs | null>;
 }

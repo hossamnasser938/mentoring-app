@@ -26,11 +26,7 @@ export class ContactUsDAO
   ) {
     super(contactUsModel);
   }
-  async getContactUsByEmailOrPhoneNumber(
-    query: string,
-  ): Promise<IContactUs | null> {
-    return await this.contactUsModel
-      .findOne({ $or: [{ email: query }, { phoneNumber: query }] })
-      .exec();
+  async getContactUsByEmail(email: string): Promise<IContactUs | null> {
+    return await this.contactUsModel.findOne({ email }).exec();
   }
 }

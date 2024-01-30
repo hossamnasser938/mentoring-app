@@ -9,16 +9,9 @@ export type ContactUsModel = IModel<IContactUs, IContactUsDocument>;
 const contactUsSchema = new Schema(
   {
     name: { type: String, required: true },
-    email: { type: String, unique: true, sparse: true },
-    phoneNumber: { type: String, required: true, unique: true },
+    email: { type: String, unique: true, required: true },
     message: { type: String, required: true },
-    field: { type: String },
     responded: { type: Boolean, default: false },
-
-    timeToContact: {
-      hour: Number,
-      minute: Number,
-    },
   },
   { timestamps: true },
 );
