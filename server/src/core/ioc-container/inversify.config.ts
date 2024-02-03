@@ -81,3 +81,24 @@ iocContainer
   .toConstantValue(projectIdeaModel);
 
 export { ProjectIdeaDAO, ProjectIdeaServie };
+
+/* userMessage deps */
+import {
+  UserMessageModel,
+  userMessageModel,
+} from '@core/data-layer/mongo-models/userMessage.model';
+import { UserMessageDAO } from '@userMessage/userMessage.dao';
+import { IUserMessageDAO } from '@userMessage/userMessage.dao.abstract';
+import { UserMessageServie } from '@userMessage/userMessage.service';
+
+iocContainer
+  .bind<IUserMessageDAO>(IOC_TYPES.IUserMessageDAO)
+  .to(UserMessageDAO);
+iocContainer
+  .bind<UserMessageServie>(IOC_TYPES.UserMessageServie)
+  .to(UserMessageServie);
+iocContainer
+  .bind<UserMessageModel>(IOC_TYPES.UserMessageModel)
+  .toConstantValue(userMessageModel);
+
+export { UserMessageDAO, UserMessageServie };
