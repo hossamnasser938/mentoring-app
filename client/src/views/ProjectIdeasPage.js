@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 
 import Navbar from '../component/Navbars/AuthNavbar';
 import ProjectIdeaCard from '../component/projectIdea/projectIdeaCard';
@@ -34,9 +33,9 @@ export default function ProjectIdeasPage() {
           data.data.map(idea => <ProjectIdeaCard idea={idea} />).slice(0, 8)}
 
       </div>
-      <Link to={'/projectideas'} className="flex justify-end mt-4 lg-blue">
+      {/* <Link to={'/projectideas'} className="flex justify-end mt-4 lg-blue">
         see more
-      </Link>
+      </Link> */}
 
     </div>
   </section>
