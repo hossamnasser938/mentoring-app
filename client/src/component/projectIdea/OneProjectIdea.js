@@ -24,7 +24,6 @@ export default function OneProjectIdea() {
             <div>
                 <Navbar transparent />
                 <div className='container mx-auto p-5'>
-        <div className="flex flex-row justify-between items-start">
 
         <section className="pt-12 pb-48  lg:w-9/12 sm:w-full">
                 <div className="container mx-auto py-5 text-center">
@@ -73,24 +72,9 @@ export default function OneProjectIdea() {
 
                     </div>
                 </section>
-                <section className="  pt-64  bg-white py-5  lg:w-4/12 sm:w-full" >
-                    <div className='container mx-auto border border-2 py-10  mx-auto border border-2 py-10  rounded-lg '>
-
-                        <h4 className=' ml-3 text-2xl  font-semibold leading-normal  text-blueGray-700 mb-6'>Contact us</h4 >
-                        <div className='flex flex-col'>
-                            <h6 className=' text-lg ml-3 font-semibold text-blueGray-700 mb-3'>
-                                Email :    <span className='text-lg ml-3 font-semibold text-black '>   mentor@gmail.com</span>
-                            </h6>
-                            <h6 className=' text-lg ml-3 font-semibold text-blueGray-700 mb-3'>
-                                Phone : <span className='text-lg ml-2 font-semibold text-black'>0100111555</span>
-                            </h6>
-                        </div>
-
-                    </div>
-                </section>
+             
 
 
-            </div>
             </div>
             </div>
         </>
