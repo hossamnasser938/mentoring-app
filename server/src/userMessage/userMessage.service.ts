@@ -25,15 +25,18 @@ export class UserMessageServie {
     return await this.userMessageDAO.getOne(id);
   }
 
-  async createOneUserMessage(createTodoDTO: ICreateUserMessageDTO) {
-    if (!createTodoDTO.email && !createTodoDTO.phoneNumber) {
+  async createOneUserMessage(createUserMessageDTO: ICreateUserMessageDTO) {
+    if (!createUserMessageDTO.email && !createUserMessageDTO.phoneNumber) {
       throw new Error('An email or phone number is required.');
     }
-    return await this.userMessageDAO.createOne(createTodoDTO);
+    return await this.userMessageDAO.createOne(createUserMessageDTO);
   }
 
-  async updateOneUserMessage(id: string, updateTodoDTO: IUpdateUserMessageDTO) {
-    return await this.userMessageDAO.updateOne(id, updateTodoDTO);
+  async updateOneUserMessage(
+    id: string,
+    updateUserMessageDTO: IUpdateUserMessageDTO,
+  ) {
+    return await this.userMessageDAO.updateOne(id, updateUserMessageDTO);
   }
 
   async deleteOneUserMessage(id: string) {
