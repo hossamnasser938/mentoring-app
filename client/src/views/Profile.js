@@ -40,7 +40,7 @@ export default function Profile() {
                                         <div className="relative">
                                             <img
                                                 alt="..."
-                                                src={mentor?.profilePicture}
+                                                // src={require('../assets/img/team-2-800x800.jpg').default}
                                                 className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
                                             />
                                         </div>
@@ -71,24 +71,13 @@ export default function Profile() {
                                     </div>
                                     <div className="w-full lg:w-4/12 px-4 lg:order-1">
                                         <div className="flex justify-center py-4 lg:pt-4 pt-8">
-                                            <div className="mr-4 p-3 text-center">
-                                                <a
-                                                href={mentor?.cv}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-
-                                                className="bg-lightBlue-500 active:bg-red-800 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150 inline-block"
-                                            >
-                                                <button
-                                                    type="button"
-                                                    className="focus:outline-none"
-                                                >
-                                                    My CV
-                                                </button>
-                                            </a>
-                                                
-                                            </div>
                                             {/* <div className="mr-4 p-3 text-center">
+                                                <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
+                                                    22
+                                                </span>
+                                                <span className="text-sm text-blueGray-400">Friends</span>
+                                            </div>
+                                            <div className="mr-4 p-3 text-center">
                                                 <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
                                                     10
                                                 </span>
@@ -130,7 +119,13 @@ export default function Profile() {
                                                     mentor?.description
                                                 }
                                             </p>
-                                         
+                                            <a
+                                                href="#pablo"
+                                                className="font-normal text-lightBlue-500"
+                                                onClick={e => e.preventDefault()}
+                                            >
+                                                Show more
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
