@@ -62,10 +62,9 @@ export default function Landing() {
                                             <i className="fas fa-award"></i>
                                         </div>
 
-                                        <h6 className="text-xl font-semibold">Awarded Agency</h6>
+                                        <h6 className="text-xl font-semibold">Project</h6>
                                         <p className="mt-2 mb-4 text-blueGray-500">
-                                            Divide details about your product or agency work into parts. A paragraph
-                                            describing a feature will be enough.
+                                            Form this road you can find all you need to build your project and generate your own ideas
                                         </p>
                                     </div>
                                 </div>
@@ -77,10 +76,11 @@ export default function Landing() {
                                         <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
                                             <i className="fas fa-retweet"></i>
                                         </div>
-                                        <h6 className="text-xl font-semibold">Free Revisions</h6>
+                                        <h6 className="text-xl font-semibold">Mentoring</h6>
                                         <p className="mt-2 mb-4 text-blueGray-500">
                                             Keep you user engaged by providing meaningful information. Remember that by
                                             this time, the user is curious.
+                                            {/* In this section you can find your mentors which they have technical experience in your field */}
                                         </p>
                                     </div>
                                 </div>
@@ -92,10 +92,11 @@ export default function Landing() {
                                         <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
                                             <i className="fas fa-fingerprint"></i>
                                         </div>
-                                        <h6 className="text-xl font-semibold">Verified Company</h6>
+                                        <h6 className="text-xl font-semibold">Assist</h6>
                                         <p className="mt-2 mb-4 text-blueGray-500">
                                             Write a few lines about each one. A paragraph describing a feature will be
                                             enough. Keep you user engaged!
+                                            {/* This section is specifically designed for you, where you can openly share your challenges with us. We are here to actively engage with you, providing personalized assistance and expert guidance to help resolve your issues effectively. */}
                                         </p>
                                     </div>
                                 </div>
