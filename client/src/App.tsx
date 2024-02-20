@@ -5,9 +5,9 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 
 import OneProjectIdea from './component/projectIdea/OneProjectIdea';
 import Home from './pages/Home/Home';
+import ProjectIdeasPage from './pages/Home/ProjectIdeasPage';
 import store from './state/setupStore';
 import Profile from './views/MentorProfile';
-import ProjectIdeasPage from './views/ProjectIdeasPage';
 
 function App() {
 
