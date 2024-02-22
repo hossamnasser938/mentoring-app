@@ -32,6 +32,14 @@ export const apiSlice = createApi({
       query: id => `/mentors/userid/${id}`,
       providesTags: (result, err, id) => [{ type: 'mentorOfIdea', id: id || 'nothing' }],
     }),
+
+    postUserMessage: build.mutation({
+      query: (messageData) => ({
+        url: 'userMessage',
+        method: 'POST',
+        body:messageData
+      }),
+    }),
   }),
 });
 
@@ -40,5 +48,6 @@ export const {
   useGetMetorProfileQuery,
   useGetProjectIdeasQuery,
   useGetMentorOfIdeaDataQuery,
-  useGetProjectIdeaQuery
+  useGetProjectIdeaQuery,
+  usePostUserMessageMutation
 } = apiSlice;

@@ -46,6 +46,7 @@ userMessageRouter.get(
 
 userMessageRouter.post('/', async (req: Request, res: Response) => {
   const { name, email, phoneNumber, message } = req.body;
+
   const userMessage = await userMessageService.createOneUserMessage({
     name,
     email,
