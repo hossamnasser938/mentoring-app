@@ -1100,6 +1100,18 @@ select {
     max-width: 1280px;
   }
 }
+@keyframes bgFadeToWhite {
+  0%, 50% {
+    background-color: #60a5fa; /* Tailwind lightBlue-500 */
+  }
+  100% {
+    background-color: #ffffff; /* White */
+  }
+}
+
+.fade-to-white {
+  animation: bgFadeToWhite 4s ease forwards; /* Adjust total duration to 4s to include delay */
+}
 
 .bg-black {
   --tw-bg-opacity: 1;
@@ -1166,6 +1178,9 @@ select {
   background-color: rgba(12, 74, 110, var(--tw-bg-opacity));
 }
 
+.bg-red-300 {
+  background-color: rgb(215, 24, 24);
+}
 .bg-teal-200 {
   --tw-bg-opacity: 1;
   background-color: rgba(153, 246, 228, var(--tw-bg-opacity));
@@ -1414,8 +1429,6 @@ select {
   display: -webkit-flex;
   display: flex;
 }
-
-
 
 .inline-flex {
   display: -webkit-inline-flex;
@@ -2727,7 +2740,7 @@ select {
   .sm\:w-6\/12 {
     width: 50%;
   }
-    /* of project card */
+  /* of project card */
 
   .sm\:w-10\/10 {
     width: 89%;
@@ -2747,7 +2760,7 @@ select {
   .md\:hidden {
     display: none;
   }
-   .grid-container {
+  .grid-container {
     display: grid;
     grid-column: 3;
     gap: 10 px;
@@ -2901,7 +2914,7 @@ select {
 
   .md\:w-6\/12 {
     width: 50%;
-  } 
+  }
   /* of project card */
   .md\:w-6\/10 {
     width: 45%;
@@ -3066,7 +3079,7 @@ select {
   .lg\:w-3\/12 {
     width: 25%;
   }
-    /* of project card */
+  /* of project card */
 
   .lg\:w-3\/10 {
     width: 30%;
