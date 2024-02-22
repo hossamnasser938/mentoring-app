@@ -4,11 +4,21 @@ import ProjectIdeaCard from '../../component/projectIdea/projectIdeaCard';
 // import ProjectIdeas from '../component/projectIdea/ProjectIdeas';
 import { useGetProjectIdeasQuery } from '../../state/apiSlice';
 export default function ProjectIdeasPage() {
-  const { data } = useGetProjectIdeasQuery();
+  const { data, isFetching } = useGetProjectIdeasQuery();
 
   return (
     <>
       <Navbar />
+      <div>
+        {isFetching && (
+          <div className='w-full bg-blueGray-700 relative' style={{ height: 'calc(100vh)' }}>
+            <div className='flex justify-center items-center h-full'>
+              <div className="loader"></div>
+              <p className="text-white">Loading...</p>
+            </div>
+          </div>
+        )}
+      </div>
       <main className="ProjectIdea-page ">
 
         <section className="pt-20 pb-48 bg-white">
@@ -33,9 +43,7 @@ export default function ProjectIdeasPage() {
                   data.data.map(idea => <ProjectIdeaCard idea={idea} />).slice(0, 8)}
 
               </div>
-              {/* <Link to={'/projectideas'} className="flex justify-end mt-4 lg-blue">
-        see more
-      </Link> */}
+
 
             </div>
           </section>
