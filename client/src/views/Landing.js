@@ -1,12 +1,11 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
+import homeCover from '../assets/img/20196826-296b-42f2-a3cc-0b15b547cab3.jpg'
 import Footer from '../component/Footers/Footer.js';
 import HomeProjectSection from '../component/homeprojectIdea/HomeProjectSection.js';
 import Mentors from '../component/mentors/Mentors.js';
 import Navbar from '../component/Navbars/AuthNavbar.js';
-// import { useGetAllMentorsQuery } from '../state/apiSlice.ts';
-// components
+
 
 export default function Landing() {
 
@@ -23,7 +22,7 @@ export default function Landing() {
                         className="absolute top-0 w-full h-full bg-center bg-cover"
                         style={{
                             backgroundImage:
-                                "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
+                                `url(${homeCover})`,
                         }}
                     >
                         <span id="blackOverlay" className="w-full h-full absolute opacity-75 bg-black"></span>
@@ -242,7 +241,7 @@ export default function Landing() {
 
 
                 {/* Mentors section  */}
-                <Mentors />
+                <Mentors isHomePage={true} />
                 {/* Mentors section  */}
 
 
