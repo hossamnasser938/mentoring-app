@@ -28,7 +28,7 @@ projectIdeaRouter.post(
   authMiddleware.authentication,
   authMiddleware.authorize(['Mentor']),
   async (req: Request, res: Response) => {
-    const { name, description, youtubeLink } = req.body;
+    const { name, description, youtubeLink, summary, PDF } = req.body;
     const createdMentor = req.userDecodedData?.id;
     if (!createdMentor) {
       throw new Error('Not authorized user');
@@ -38,7 +38,9 @@ projectIdeaRouter.post(
       name,
       description,
       youtubeLink,
+      summary,
       createdMentor,
+      PDF,
     });
     res.json({ data: projectIdea });
   },
