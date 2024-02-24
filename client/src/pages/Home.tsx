@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Landing from '../../views/Landing';
+import Landing from '../views/Landing';
 
 
 export default function Home() {
