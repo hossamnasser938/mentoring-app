@@ -13,7 +13,7 @@ export default function HomeProjectSection() {
 
         <main className="ProjectIdea-page ">
 
-            <section className="pt-20 pb-48 bg-white">
+            <section className="pt-20  bg-white">
 
 
 
@@ -22,7 +22,7 @@ export default function HomeProjectSection() {
                         <div className="mb-12">
                             <h2 className="text-4xl font-semibold">Here are our Ideas</h2>
                             <p className="text-lg leading-relaxed m-4 text-blueGray-500 my-5 py-5">
-                            In this section, you will find many different projects that you can implement yourself. You can also generate your ideas and develop your own project, as you will find new and modern ideas here tailored to the requirements and needs of the job market.
+                                In this section, you will find many different projects that you can implement yourself. You can also generate your ideas and develop your own project, as you will find new and modern ideas here tailored to the requirements and needs of the job market.
                             </p>
                         </div>
 
