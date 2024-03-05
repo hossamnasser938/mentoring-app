@@ -8,10 +8,20 @@ import { useGetMetorProfileQuery } from '../state/apiSlice';
 
 export default function Profile() {
     const { id } = useParams()
-    const { data } = useGetMetorProfileQuery(id)
+    const { data,isFetching } = useGetMetorProfileQuery(id)
     const mentor = data?.mentor
     return (
         <>
+         <div>
+                {isFetching  && (
+                    <div className='w-full bg-blueGray-700 relative' style={{ height: 'calc(100vh)' }}>
+                        <div className='flex justify-center items-center h-full'>
+                            <div className="loader"></div>
+                            <p className="text-white">Loading...</p>
+                        </div>
+                    </div>
+                )}
+            </div>
             <Navbar transparent />
             <main className="profile-page">
                 <section className="relative block h-500-px">
