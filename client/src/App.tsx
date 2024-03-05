@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 
 import OneProjectIdea from './component/projectIdea/OneProjectIdea';
-import Home from './pages/Home/Home';
+import Home from './pages/Home';
+import MentorPage from './pages/MentorPage';
+import ProjectIdeasPage from './pages/ProjectIdeasPage';
 import store from './state/setupStore';
 import Profile from './views/MentorProfile';
-import ProjectIdeasPage from './views/ProjectIdeasPage';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
     { path: 'home', element: <Home /> },
     { path: 'profile/:id', element: <Profile /> },
     { path: 'projectideas', element: <ProjectIdeasPage /> },
+    { path: 'mentors', element: <MentorPage /> },
     { path: 'projectideas/:idea', element: <OneProjectIdea /> },
   ]);
 

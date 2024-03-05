@@ -8,8 +8,10 @@ export type ProjectIdeaModel = IModel<IProjectIdea, IProjectIdeaDocument>;
 
 const projectIdeaSchema = new Schema({
   name: { type: String, required: true },
+  summary: { type: String },
   description: { type: String, required: true },
   youtubeLink: { type: String, required: true },
+  PDF: { type: String, required: true }, // must be converted into object
 
   createdMentor: { type: Types.ObjectId, ref: 'Mentor', required: true },
   image: String, //its optional && must be converted into object
