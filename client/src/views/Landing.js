@@ -5,6 +5,7 @@ import Footer from '../component/Footers/Footer.js';
 import HomeProjectSection from '../component/homeprojectIdea/HomeProjectSection.js';
 import Mentors from '../component/mentors/Mentors.js';
 import Navbar from '../component/Navbars/AuthNavbar.js';
+import UserMessagesHomeSection from '../component/UserMessages/UserMessagesHomeSection';
 
 
 export default function Landing() {
